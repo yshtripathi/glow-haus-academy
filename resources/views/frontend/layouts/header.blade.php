@@ -159,8 +159,12 @@
   margin-left: 4px !important;
 }
 
-/* Dropdown Menu overrides */
-.nav-list .dropdown-menu, .dropdown-menu {
+/* Dropdown Menu overrides & animations */
+.dropdown-menu {
+  display: block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
   background-color: var(--color-warm-bone, #fef9f3) !important;
   border: 1px solid var(--color-ash-gray, #d7d6d4) !important;
   border-radius: 16px !important;
@@ -169,13 +173,23 @@
   margin-top: 8px !important;
   mix-blend-mode: normal !important;
   z-index: 999 !important;
+  transform: translateY(12px) !important;
+  transition: opacity 0.25s cubic-bezier(0.25, 1, 0.5, 1), transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.25s !important;
 }
+.hover-dropdown:hover > .dropdown-menu,
+.dropdown.show > .dropdown-menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
 .dropdown-item {
   display: flex !important;
   align-items: center !important;
   column-gap: 10px !important;
   font-family: var(--font-lausanne), sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: 14px !important;
   color: var(--color-ink-black, #1d1e21) !important;
   padding: 10px 18px !important;
@@ -189,6 +203,177 @@
 .dropdown-divider {
   border-top: 1px solid var(--color-ash-gray, #d7d6d4) !important;
   margin: 6px 0 !important;
+}
+
+/* Mega Dropdown layout */
+.nav-item.dropdown {
+  position: static !important; /* Let mega menu align relative to nav-list */
+}
+.nav-list {
+  position: relative !important;
+}
+.mega-menu {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(12px) !important;
+  width: 660px !important;
+  padding: 24px !important;
+  border-radius: 24px !important;
+}
+.hover-dropdown:hover > .mega-menu {
+  transform: translateX(-50%) translateY(0) !important;
+}
+.mega-menu-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr !important;
+  gap: 24px !important;
+}
+.mega-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.mega-title {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  opacity: 0.5 !important;
+  margin-bottom: 12px !important;
+  display: block !important;
+}
+.mega-links {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  row-gap: 8px !important;
+}
+.mega-links li {
+  list-style: none !important;
+}
+.mega-link-item {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 14px !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.mega-link-item:hover {
+  background-color: var(--color-butter-cream, #f9e5b1) !important;
+}
+.item-icon-box {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 10px !important;
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.item-content {
+  display: flex !important;
+  flex-direction: column !important;
+  row-gap: 2px !important;
+}
+.item-title {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.item-desc {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-size: 11px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  opacity: 0.6 !important;
+}
+
+/* Right featured card */
+.featured-card {
+  height: 100% !important;
+  background-color: var(--color-ink-black, #1d1e21) !important;
+  color: var(--color-warm-bone, #fef9f3) !important;
+  border-radius: 18px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 180px !important;
+}
+.featured-card .card-badge {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  background-color: var(--color-butter-cream, #f9e5b1) !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  padding: 4px 10px !important;
+  border-radius: 9999px !important;
+}
+.featured-card .card-title {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 1.28 !important;
+  margin: 0 0 8px 0 !important;
+  color: var(--color-warm-bone, #fef9f3) !important;
+}
+.featured-card .card-desc {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  opacity: 0.75 !important;
+  margin: 0 0 16px 0 !important;
+  color: var(--color-warm-bone, #fef9f3) !important;
+}
+.featured-card .card-btn-inline {
+  display: inline-flex !important;
+  align-items: center !important;
+  column-gap: 6px !important;
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: var(--color-butter-cream, #f9e5b1) !important;
+  text-decoration: none !important;
+  transition: column-gap 0.2s ease !important;
+}
+.featured-card .card-btn-inline:hover {
+  column-gap: 10px !important;
+}
+
+.mega-menu-footer {
+  border-top: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  margin-top: 20px !important;
+  padding-top: 14px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.mega-footer-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+.mega-footer-link:hover {
+  opacity: 0.8 !important;
 }
 
 /* Account specific Dropdown headers */
@@ -261,22 +446,49 @@
 								{{ __('common.header.catalog') }}
 								<svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 							</a>
-							<ul class="dropdown-menu catalog-menu">
-								@php
-									$categories = \App\Models\Category::where('status','active')->where('is_parent',1)->orderBy('title','ASC')->get();
-								@endphp
-								@forelse($categories as $cat)
-									<li>
-										<a class="dropdown-item" href="{{ route('product-lists', $cat->slug) }}">
-											<i class="fas fa-palette dd-icon"></i><span>{{ $cat->title }}</span>
-										</a>
-									</li>
-								@empty
-									<li><span class="dropdown-item dropdown-item--muted">{{ __('common.categories.no_categories') }}</span></li>
-								@endforelse
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item dropdown-item--all" href="{{route('product-lists')}}"><i class="fas fa-th dd-icon"></i><span>{{ __('common.categories.view_all') }}</span></a></li>
-							</ul>
+							<div class="dropdown-menu mega-menu">
+								<div class="mega-menu-grid">
+									<!-- Categories Column (Left) -->
+									<div class="mega-column categories-list">
+										<span class="mega-title">{{ __('common.header.categories') ?? 'Categories' }}</span>
+										<ul class="mega-links">
+											@php
+												$categories = \App\Models\Category::where('status','active')->where('is_parent',1)->orderBy('title','ASC')->get();
+											@endphp
+											@forelse($categories as $cat)
+												<li>
+													<a class="mega-link-item" href="{{ route('product-lists', $cat->slug) }}">
+														<div class="item-icon-box">
+															<i class="fas fa-sparkles text-warning" style="font-size: 13px;"></i>
+														</div>
+														<div class="item-content">
+															<span class="item-title">{{ $cat->title }}</span>
+															<span class="item-desc">Beauty & Makeup Classes</span>
+														</div>
+													</a>
+												</li>
+											@empty
+												<li><span class="mega-link-item mega-link-item--muted">{{ __('common.categories.no_categories') }}</span></li>
+											@endforelse
+										</ul>
+									</div>
+
+									<!-- Featured Highlight Column (Right) -->
+									<div class="mega-column featured-card-column">
+										<div class="featured-card">
+											<div class="card-badge">POPULAR</div>
+											<h4 class="card-title">Professional Bridal & Makeup Academy</h4>
+											<p class="card-desc">Upgrade your skill portfolio and earn course credits on our elite levels.</p>
+											<a href="{{ route('product-lists') }}" class="card-btn-inline">Explore Catalog <i class="fas fa-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="mega-menu-footer">
+									<a href="{{route('product-lists')}}" class="mega-footer-link">
+										<i class="fas fa-th"></i> <span>{{ __('common.categories.view_all') }}</span>
+									</a>
+								</div>
+							</div>
 						</li>
 						<li class="nav-item"><a href="{{route('about-us')}}" class="nav-link {{ Route::is('about-us') ? 'active' : '' }}">{{ __('common.header.about')}}</a></li>
 						<li class="nav-item"><a href="{{route('contact')}}" class="nav-link {{ Route::is('contact') ? 'active' : '' }}">{{ __('common.header.contact') }}</a></li>
