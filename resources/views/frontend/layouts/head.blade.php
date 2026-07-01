@@ -61,9 +61,7 @@
 
 	<!-- Stylesheets: Application -->
 	<link href="{{ url('assets/css/global.css') }}?v={{ @filemtime(public_path('assets/css/global.css')) }}" rel="stylesheet">
-	<link href="{{ url('assets/css/style.css') }}?v={{ @filemtime(public_path('assets/css/style.css')) }}" rel="stylesheet">
 	<link href="{{ url('assets/css/responsive.css') }}?v={{ @filemtime(public_path('assets/css/responsive.css')) }}" rel="stylesheet">
-	<link href="{{ url('assets/css/color-utilities.css') }}?v={{ @filemtime(public_path('assets/css/color-utilities.css')) }}" rel="stylesheet">
 	<link href="{{ url('assets/css/glowhaus-theme.css') }}?v={{ @filemtime(public_path('assets/css/glowhaus-theme.css')) }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url('assets/css/app.css') }}?v={{ @filemtime(public_path('assets/css/app.css')) }}">
 
