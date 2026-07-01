@@ -24,7 +24,7 @@
   transition: all 0.3s ease !important;
 }
 
-/* logo */
+/* logo & wordmark */
 .logo-img {
   max-height: 48px !important;
   border-radius: 8px !important;
@@ -32,6 +32,28 @@
 }
 .logo-img:hover {
   transform: scale(1.03);
+}
+.wordmark-logo {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.8px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  transition: opacity 0.2s ease !important;
+}
+.wordmark-logo:hover {
+  opacity: 0.8 !important;
+}
+.brand-glyph-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.2s ease !important;
+}
+.brand-glyph-box:hover {
+  transform: scale(1.05);
 }
 
 /* Center nav capsule container alignment */
@@ -431,11 +453,9 @@
 	<header class="main-header sticky-top">
 		<div class="container px-3 px-md-5">
 			<div class="header-wrapper d-flex align-items-center justify-content-between py-3">
-				<!-- Logo -->
+				<!-- Wordmark Logo -->
 				<div class="logo-section">
-					<a href="{{route('home')}}" class="logo-link">
-						<img src="{{url('assets/images/logo.jpg')}}" alt="Glow Haus Academy" class="logo-img">
-					</a>
+					<a href="{{route('home')}}" class="wordmark-logo">GLOW HAUS</a>
 				</div>
 
 				<!-- Center Navigation -->
@@ -587,6 +607,16 @@
 						<i class="fas fa-shopping-bag"></i>
 						<span class="cart-badge cart-count">{{ Helper::totalCartQuantity() }}</span>
 					</a>
+
+					<!-- Brand Mark Glyph (Far Right Visual Signature) -->
+					<div class="brand-glyph-box d-none d-xl-flex ms-3">
+						<svg class="brand-glyph" width="28" height="32" viewBox="0 0 28 32" fill="none">
+							<path d="M14 0L28 8V24L14 32L0 24V8L14 0Z" fill="#1d1e21"/>
+							<path d="M14 6V26" stroke="#fef9f3" stroke-width="2"/>
+							<path d="M6 10L22 22" stroke="#fef9f3" stroke-width="2"/>
+							<path d="M6 22L22 10" stroke="#fef9f3" stroke-width="2"/>
+						</svg>
+					</div>
 				</div>
 			</div>
 		</div>
