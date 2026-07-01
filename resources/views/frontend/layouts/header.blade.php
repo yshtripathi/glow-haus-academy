@@ -447,6 +447,38 @@
 .mobile-nav-toggler:hover {
   transform: scale(1.05);
 }
+
+/* ============================================================
+   RESPONSIVENESS AND MOBILE VIEW OVERRIDES
+   ============================================================ */
+@media (max-width: 767px) {
+  .wordmark-logo {
+    font-size: 20px !important;
+    letter-spacing: -0.5px !important;
+  }
+  .header-wrapper {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .right-actions {
+    column-gap: 8px !important;
+  }
+  .selector-btn, .account-btn, .cart-btn {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    height: 38px !important;
+    column-gap: 6px !important;
+  }
+  .account-ico, .cart-btn i {
+    font-size: 14px !important;
+  }
+  .cart-badge {
+    min-width: 16px !important;
+    height: 16px !important;
+    font-size: 9px !important;
+    padding: 1px 4px !important;
+  }
+}
 </style>
 
 <!-- Main Header-->
@@ -617,6 +649,11 @@
 							<path d="M6 22L22 10" stroke="#fef9f3" stroke-width="2"/>
 						</svg>
 					</div>
+
+					<!-- Mobile Navigation Toggler (d-lg-none hides on desktops) -->
+					<div class="mobile-nav-toggler d-lg-none ms-3" style="cursor: pointer;">
+						<span class="icon lnr-icon-bars" style="font-size: 24px; color: var(--color-ink-black, #1d1e21);"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -629,7 +666,7 @@
 			<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 			<nav class="menu-box">
 				<div class="upper-box">
-					<div class="nav-logo"><a href="{{route('home')}}"><img src="{{url('assets/images/logo.jpg')}}" alt="" title=""></a></div>
+					<div class="nav-logo"><a href="{{route('home')}}" class="wordmark-logo" style="font-size: 26px !important; letter-spacing: -0.8px !important;">GLOW HAUS</a></div>
 					<div class="close-btn"><i class="icon fa fa-times"></i></div>
 				</div>
 
@@ -648,7 +685,7 @@
 				<div class="inner-container">
 					<!--Logo-->
 					<div class="logo">
-						<a href="{{route('home')}}" title=""><img src="{{url('assets/images/logo.jpg')}}" alt="" title=""></a>
+						<a href="{{route('home')}}" class="wordmark-logo" style="font-size: 26px !important; letter-spacing: -0.8px !important;">GLOW HAUS</a>
 					</div>
 
 					<!--Right Col-->
