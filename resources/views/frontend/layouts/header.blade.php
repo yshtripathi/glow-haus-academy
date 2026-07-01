@@ -485,9 +485,11 @@
 	<header class="main-header sticky-top">
 		<div class="container px-3 px-md-5">
 			<div class="header-wrapper d-flex align-items-center justify-content-between py-3">
-				<!-- Wordmark Logo -->
+				<!-- Logo -->
 				<div class="logo-section">
-					<a href="{{route('home')}}" class="wordmark-logo">GLOW HAUS</a>
+					<a href="{{route('home')}}" class="logo-link">
+						<img src="{{url('assets/images/logo.jpg')}}" alt="Glow Haus Academy" class="logo-img">
+					</a>
 				</div>
 
 				<!-- Center Navigation -->
@@ -666,7 +668,7 @@
 			<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 			<nav class="menu-box">
 				<div class="upper-box">
-					<div class="nav-logo"><a href="{{route('home')}}" class="wordmark-logo" style="font-size: 26px !important; letter-spacing: -0.8px !important;">GLOW HAUS</a></div>
+					<div class="nav-logo"><a href="{{route('home')}}"><img src="{{url('assets/images/logo.jpg')}}" alt="Glow Haus Academy" title="Glow Haus Academy"></a></div>
 					<div class="close-btn"><i class="icon fa fa-times"></i></div>
 				</div>
 
@@ -685,7 +687,7 @@
 				<div class="inner-container">
 					<!--Logo-->
 					<div class="logo">
-						<a href="{{route('home')}}" class="wordmark-logo" style="font-size: 26px !important; letter-spacing: -0.8px !important;">GLOW HAUS</a>
+						<a href="{{route('home')}}" title="Glow Haus Academy"><img src="{{url('assets/images/logo.jpg')}}" alt="Glow Haus Academy" title="Glow Haus Academy"></a>
 					</div>
 
 					<!--Right Col-->
