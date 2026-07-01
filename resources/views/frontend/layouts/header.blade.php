@@ -10,6 +10,238 @@
         
     </div>
 </div>
+
+<style>
+/* ============================================================
+   HEADER REVAMP - DOVETAIL EDITORIAL AESTHETIC
+   ============================================================ */
+/* Root header container */
+.main-header {
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border-bottom: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  box-shadow: none !important;
+  padding: 12px 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* logo */
+.logo-img {
+  max-height: 48px !important;
+  border-radius: 8px !important;
+  transition: transform 0.2s ease !important;
+}
+.logo-img:hover {
+  transform: scale(1.03);
+}
+
+/* Center nav capsule container alignment */
+.center-nav {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Slide-Hover Pill Navigation */
+.nav-list {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  border-radius: 9999px !important;
+  height: 52px !important;
+}
+.nav-list .nav-item {
+  position: relative !important;
+  z-index: 2 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nav-list .nav-link {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 6px !important;
+  color: #ffffff !important;
+  mix-blend-mode: difference !important;
+  padding: 10px 22px !important;
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  background: transparent !important;
+  transition: opacity 0.2s ease !important;
+}
+.nav-list .nav-link svg {
+  stroke: currentColor !important;
+  transition: transform 0.2s ease !important;
+}
+.nav-list .nav-link:hover svg {
+  transform: translateY(1px);
+}
+.nav-list .nav-cursor {
+  position: absolute !important;
+  top: 4px !important;
+  bottom: 4px !important;
+  height: calc(100% - 8px) !important;
+  background-color: var(--color-ink-black, #1d1e21) !important;
+  border-radius: 9999px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease !important;
+}
+
+/* Right-actions container spacing */
+.right-actions {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+}
+
+/* Action Dropdown Buttons, Selectors, and Cart */
+.selector-btn, .account-btn, .cart-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  column-gap: 8px !important;
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  border-radius: 9999px !important;
+  padding: 8px 18px !important;
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+  height: 44px !important;
+}
+.selector-btn:hover, .account-btn:hover, .cart-btn:hover {
+  background-color: var(--color-butter-cream, #f9e5b1) !important;
+  border-color: var(--color-ink-black, #1d1e21) !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.selector-btn .selector-ico {
+  margin-right: 2px !important;
+  border-radius: 2px !important;
+}
+
+/* Cart Button indicator badge styling */
+.cart-btn {
+  position: relative !important;
+  padding: 8px 14px !important;
+  width: auto !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.cart-btn i {
+  font-size: 16px !important;
+}
+.cart-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--color-ink-black, #1d1e21) !important;
+  color: var(--color-warm-bone, #fef9f3) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  padding: 2px 6px !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  margin-left: 4px !important;
+}
+
+/* Dropdown Menu overrides */
+.nav-list .dropdown-menu, .dropdown-menu {
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  border-radius: 16px !important;
+  padding: 8px !important;
+  box-shadow: none !important;
+  margin-top: 8px !important;
+  mix-blend-mode: normal !important;
+  z-index: 999 !important;
+}
+.dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 10px !important;
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+  padding: 10px 18px !important;
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+.dropdown-item:hover, .dropdown-item.active {
+  background-color: var(--color-butter-cream, #f9e5b1) !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.dropdown-divider {
+  border-top: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  margin: 6px 0 !important;
+}
+
+/* Account specific Dropdown headers */
+.account-dropdown .account-head {
+  padding: 10px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  row-gap: 4px !important;
+}
+.account-dropdown .account-head__name {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.account-dropdown .account-head__credits {
+  font-family: var(--font-lausanne), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: var(--color-ink-black, #1d1e21) !important;
+}
+.account-cta {
+  padding: 4px 8px !important;
+}
+
+/* Sticky Header styling */
+.sticky-header {
+  background-color: var(--color-warm-bone, #fef9f3) !important;
+  border-bottom: 1px solid var(--color-ash-gray, #d7d6d4) !important;
+  box-shadow: none !important;
+  padding: 10px 0 !important;
+  transition: all 0.3s ease !important;
+}
+.sticky-header .logo img {
+  max-height: 40px !important;
+  border-radius: 6px !important;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggler {
+  color: var(--color-ink-black, #1d1e21) !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.mobile-nav-toggler:hover {
+  transform: scale(1.05);
+}
+</style>
+
 <!-- Main Header-->
 	<header class="main-header sticky-top">
 		<div class="container px-3 px-md-5">
