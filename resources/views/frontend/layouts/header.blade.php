@@ -17,7 +17,7 @@
 				<!-- Logo -->
 				<div class="logo-section">
 					<a href="{{route('home')}}" class="logo-link">
-						<img src="{{url('assets/images/logo.jpg')}}" alt="Artify Academy" class="logo-img">
+						<img src="{{url('assets/images/logo.jpg')}}" alt="Glow Haus Academy" class="logo-img">
 					</a>
 				</div>
 
@@ -48,8 +48,34 @@
 						</li>
 						<li class="nav-item"><a href="{{route('about-us')}}" class="nav-link {{ Route::is('about-us') ? 'active' : '' }}">{{ __('common.header.about')}}</a></li>
 						<li class="nav-item"><a href="{{route('contact')}}" class="nav-link {{ Route::is('contact') ? 'active' : '' }}">{{ __('common.header.contact') }}</a></li>
+						<li class="nav-cursor" aria-hidden="true"></li>
 					</ul>
 				</nav>
+
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						const navList = document.querySelector('.center-nav .nav-list');
+						const navItems = document.querySelectorAll('.center-nav .nav-list .nav-item');
+						const navCursor = document.querySelector('.center-nav .nav-list .nav-cursor');
+						
+						if (!navList || !navCursor) return;
+						
+						navItems.forEach(item => {
+							item.addEventListener('mouseenter', function() {
+								const rect = item.getBoundingClientRect();
+								const parentRect = navList.getBoundingClientRect();
+								
+								navCursor.style.width = rect.width + 'px';
+								navCursor.style.left = (rect.left - parentRect.left) + 'px';
+								navCursor.style.opacity = '1';
+							});
+						});
+						
+						navList.addEventListener('mouseleave', function() {
+							navCursor.style.opacity = '0';
+						});
+					});
+				</script>
 
 				<!-- Right Actions -->
 				<div class="right-actions d-flex align-items-center">

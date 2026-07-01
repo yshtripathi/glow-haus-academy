@@ -9,7 +9,7 @@
     <div class="auto-container artify-hero__container">
         <div class="artify-hero__content">
             <div class="artify-hero__badge">
-                <i class="fas fa-palette"></i> {{ $misc['Company Name'] ?? __('Artify Academy') }}
+                <i class="fas fa-sparkles"></i> {{ $misc['Company Name'] ?? __('Glow Haus Academy') }}
             </div>
 
             <h1 class="artify-hero__title">{{ __('common.gal_hero_title') }}</h1>

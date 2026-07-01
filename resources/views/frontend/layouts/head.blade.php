@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<!-- Meta: Character Set & Basic -->
@@ -7,36 +7,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 	<!-- Meta: Title & Description -->
-	<title>@yield('title', 'Artify Academy - Online Art Classes & Digital Illustration Courses')</title>
-	<meta name="title" content="Artify Academy - Professional Online Art Courses">
-	<meta name="description" content="Learn professional art skills at Artify Academy. Explore online courses in digital illustration, traditional fine arts, character design, graphic design, and advanced drawing techniques.">
-	<meta name="keywords" content="online art classes, digital illustration, character design, graphic design, drawing courses, painting tutorials, concept art, animation design, artistic education, professional art training">
-	<meta name="author" content="Artify Academy">
+	<title>@yield('title', 'Glow Haus Academy - Online Beauty, Makeup & Skincare Courses')</title>
+	<meta name="title" content="Glow Haus Academy - Professional Online Beauty & Makeup Artistry Courses">
+	<meta name="description" content="Learn professional beauty, makeup artistry, advanced skincare, nail technology, eyelash extension, eyebrow beauty, and salon management skills at Glow Haus Academy. Master beauty techniques through flexible online courses.">
+	<meta name="keywords" content="online beauty academy, makeup artistry classes, online skincare courses, nail art technology, eyelash extensions training, eyebrow lamination course, beauty salon management, beauty certification, credit-based beauty learning">
+	<meta name="author" content="Glow Haus Academy">
 
 	<!-- Meta: Open Graph / Facebook -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="@yield('title', 'Artify Academy - Professional Online Art Courses')">
-	<meta property="og:description" content="Master digital illustration, character design, traditional fine arts, graphic design, and advanced drawing at Artify Academy. Learn from industry professionals.">
+	<meta property="og:title" content="@yield('title', 'Glow Haus Academy - Professional Online Beauty & Makeup Artistry Courses')">
+	<meta property="og:description" content="Master professional makeup artistry, advanced skincare, nail technology, and eyelash styling at Glow Haus Academy. Learn from leading beauty industry professionals.">
 	@if(isset($og_image))
 		<meta property="og:image" content="{{ $og_image }}">
 	@else
 		<meta property="og:image" content="{{ asset('assets/images/logo.jpg') }}">
 	@endif
 	<meta property="og:url" content="{{ url()->current() }}">
-	<meta property="og:site_name" content="Artify Academy">
+	<meta property="og:site_name" content="Glow Haus Academy">
 	<meta property="og:locale" content="en_US">
 
 	<!-- Meta: Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="@yield('title', 'Artify Academy - Professional Online Art Courses')">
-	<meta name="twitter:description" content="Master digital illustration, character design, traditional fine arts, graphic design, and advanced drawing at Artify Academy. Learn from industry professionals.">
+	<meta name="twitter:title" content="@yield('title', 'Glow Haus Academy - Professional Online Beauty & Makeup Artistry Courses')">
+	<meta name="twitter:description" content="Master professional makeup artistry, advanced skincare, nail technology, and eyelash styling at Glow Haus Academy. Learn from leading beauty industry professionals.">
 	@if(isset($og_image))
 		<meta name="twitter:image" content="{{ $og_image }}">
 	@else
 		<meta name="twitter:image" content="{{ asset('assets/images/logo.jpg') }}">
 	@endif
-	<meta name="twitter:site" content="@ArtifyAcademy">
-	<meta name="twitter:creator" content="@ArtifyAcademy">
+	<meta name="twitter:site" content="@GlowHausAcademy">
+	<meta name="twitter:creator" content="@GlowHausAcademy">
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon">
@@ -64,7 +64,7 @@
 	<link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
 	<link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet">
 	<link href="{{ url('assets/css/color-utilities.css') }}" rel="stylesheet">
-	<link href="{{ url('assets/css/theme.css') }}" rel="stylesheet">
+	<link href="{{ url('assets/css/glowhaus-theme.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url('assets/css/app.css') }}">
 
 	<!-- Cookie Consent Scripts -->

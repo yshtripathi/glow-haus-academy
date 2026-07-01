@@ -1,0 +1,981 @@
+/**
+ * GLOW HAUS ACADEMY THEME
+ * Based on Dovetail Design System
+ * Light theme with warm cream-paper editorial magazine aesthetic
+ *
+ * @author Design System
+ * @version 1.0
+ */
+
+/* ============================================================
+   ROOT DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* ---- Color Palette ---- */
+  /* Primary Text & Surfaces */
+  --color-butter-cream: #f9e5b1;   /* Hero and section canvas background */
+  --color-ink-black: #1d1e21;      /* Primary text, filled buttons, main text color */
+  --color-true-black: #000000;     /* Illustration strokes, icon fills, graphic elements */
+  --color-warm-bone: #fef9f3;      /* Card backgrounds, secondary panels, light surface */
+  --color-ash-gray: #e5e7eb;       /* Hairline borders, dividers, neutral tag fills */
+
+  /* Legacy variables mappings to maintain theme compatibility */
+  --color-ink: var(--color-ink-black);
+  --color-paper: var(--color-warm-bone);
+  --color-cream: var(--color-butter-cream);
+  --color-stone: var(--color-ash-gray);
+  --color-pencil: var(--color-ink-black);
+  --color-graphite: #6f6c69;
+  --color-charcoal: var(--color-ink-black);
+
+  /* Brand accents mapped to design tokens for minimalist editorial feel */
+  --color-ember-red: var(--color-ink-black);
+  --color-deep-ember: var(--color-true-black);
+  --color-cobalt-link: var(--color-ink-black);
+  --color-teal-dusk: var(--color-ink-black);
+
+  /* Background Washes mapped to warm cream / bone palette */
+  --color-mint-wash: var(--color-butter-cream);
+  --color-sky-wash: var(--color-warm-bone);
+  --color-forest: var(--color-ink-black);
+
+  /* Surface Layers */
+  --surface-paper-canvas: var(--color-butter-cream);
+  --surface-cream-wash: var(--color-butter-cream);
+  --surface-tinted-wave: var(--color-butter-cream);
+  --surface-card-surface: var(--color-warm-bone);
+
+  /* ---- Typography ---- */
+  /* Font Families — Lausanne is the single typeface for everything */
+  --font-lausanne: 'Lausanne', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-graphik: var(--font-lausanne);
+  --font-inter: var(--font-lausanne);
+  --font-caecilia: var(--font-lausanne);
+  --font-shantell-sans: var(--font-lausanne);
+
+  /* Typography Scale */
+  --text-caption: 14px;
+  --leading-caption: 1.4;
+  --tracking-caption: 0.14px;
+
+  --text-body-sm: 20px;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: 0.14px;
+
+  --text-body: 22px;
+  --leading-body: 1.36;
+  --tracking-body: 0.11px;
+
+  --text-body-lg: 24px;
+  --leading-body-lg: 1.33;
+  --tracking-body-lg: 0.11px;
+
+  --text-subheading: 28px;
+  --leading-subheading: 1.28;
+  --tracking-subheading: 0;
+
+  --text-heading: 32px;
+  --leading-heading: 1.25;
+  --tracking-heading: 0;
+
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.16;
+  --tracking-heading-lg: -0.24px;
+
+  --text-display: 72px;
+  --leading-display: 1.0;
+  --tracking-display: -0.72px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-w475: 400;
+  --font-weight-medium: 600;
+  --font-weight-semibold: 600;
+  --font-weight-w625: 600;
+  --font-weight-bold: 700;
+
+  /* ---- Spacing Scale (8px base unit) ---- */
+  --spacing-unit: 8px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-72: 72px;
+  --spacing-128: 128px;
+  --spacing-192: 192px;
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 2.5px;
+  --radius-lg: 16px;
+  --radius-xl: 16px;
+
+  /* Semantic Radius Names */
+  --radius-nav: 9999px;
+  --radius-cards: 16px;
+  --radius-badges: 91px;
+  --radius-images: 16px;
+  --radius-inputs: 8px;
+  --radius-buttons: 9999px;
+  --radius-pilltags: 91px;
+
+  /* ---- Shadows (Completely flat design - no shadows/depth) ---- */
+  --shadow-subtle: none;
+  --shadow-lg: none;
+
+  /* ---- Layout ---- */
+  --page-max-width: 1200px;
+  --section-gap: 80px;
+  --card-padding: 32px;
+  --element-gap: 24px;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 350ms ease-out;
+}
+
+/* ============================================================
+   GLOBAL RESETS & DEFAULTS
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-butter-cream);
+  color: var(--color-ink-black);
+  font-family: var(--font-lausanne);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  font-weight: var(--font-weight-regular);
+}
+
+/* ============================================================
+   TYPOGRAPHY COMPONENTS
+   ============================================================ */
+
+/* Display Heading (72px) */
+h1, .display {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-24);
+}
+
+/* Large Heading (48px) */
+h2, .heading-lg {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-heading-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-heading-lg);
+  letter-spacing: var(--tracking-heading-lg);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-24);
+}
+
+/* Heading (32px) */
+h3, .heading {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-16);
+}
+
+/* Subheading (28px) */
+h4, .subheading {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-subheading);
+  letter-spacing: var(--tracking-subheading);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-16);
+}
+
+/* Body Large (24px) */
+.body-lg, h5 {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-body-lg);
+  letter-spacing: var(--tracking-body-lg);
+  color: var(--color-ink-black);
+}
+
+/* Body (22px) */
+p, .body {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-24);
+  text-align: left; /* Left align body text always */
+}
+
+/* Body Small (20px) */
+.body-sm, h6 {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-body-sm);
+  letter-spacing: var(--tracking-body-sm);
+  color: var(--color-ink-black);
+}
+
+/* Caption (14px) */
+.caption {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-caption);
+  letter-spacing: var(--tracking-caption);
+  color: var(--color-ink-black);
+  opacity: 0.8;
+}
+
+/* Secondary Text */
+.text-secondary {
+  color: var(--color-ink-black);
+  opacity: 0.8;
+  font-size: var(--text-body-sm);
+}
+
+/* Muted Text */
+.text-muted {
+  color: var(--color-ink-black);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   BUTTONS & ACTIONS (Filled Pill & Ghost)
+   ============================================================ */
+
+/* Primary Button - Filled Pill */
+.btn-primary,
+button[type="submit"],
+input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+
+  background-color: var(--color-ink-black);
+  color: var(--color-warm-bone);
+
+  font-family: var(--font-lausanne);
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--radius-buttons);
+
+  cursor: pointer;
+  transition: transform var(--transition-fast) cubic-bezier(.34,1.56,.64,1), background var(--transition-fast);
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--color-true-black);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.btn-primary:active,
+button[type="submit"]:active,
+input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Ghost Button & Secondary Actions */
+.btn-ghost,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+
+  background-color: transparent;
+  color: var(--color-ink-black);
+
+  font-family: var(--font-lausanne);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+
+  padding: var(--spacing-8) var(--spacing-16);
+  border: none;
+  border-radius: var(--radius-navitems);
+
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-ghost:hover,
+.btn-secondary:hover {
+  color: var(--color-true-black);
+  text-decoration: underline;
+}
+
+/* Text Links */
+a, .link {
+  color: var(--color-ink-black);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+}
+
+a:hover, .link:hover {
+  color: var(--color-true-black);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   CARDS & CONTAINERS (Flat Photo Cards, no shadow)
+   ============================================================ */
+.card {
+  background-color: var(--color-warm-bone);
+  border-radius: var(--radius-cards);
+  padding: var(--card-padding);
+  box-shadow: none;
+  border: 1px solid var(--color-ash-gray);
+  transition: border-color var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-ink-black);
+  box-shadow: none;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-16);
+  font-family: var(--font-lausanne);
+  font-size: 18px;
+  line-height: 1.4;
+
+  background-color: var(--color-warm-bone);
+  color: var(--color-ink-black);
+  border: 1px solid var(--color-ash-gray);
+  border-radius: var(--radius-inputs);
+
+  transition: border-color var(--transition-fast);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-ink-black);
+  opacity: 0.5;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-ink-black);
+  background-color: var(--color-warm-bone);
+  box-shadow: none;
+}
+
+/* ============================================================
+   BADGES & PILLS
+   ============================================================ */
+.badge {
+  display: inline-block;
+  font-family: var(--font-lausanne);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+
+  padding: 6px 12px;
+  border-radius: var(--radius-badges);
+  border: 1px solid var(--color-ash-gray);
+  background-color: var(--color-warm-bone);
+  color: var(--color-ink-black);
+
+  white-space: nowrap;
+}
+
+/* Capability Stacking Tag (Specific Dovetail pill structure) */
+.capability-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-warm-bone);
+  border: 1px solid var(--color-ash-gray);
+  border-radius: var(--radius-pilltags);
+  padding: 20px 32px;
+  font-family: var(--font-lausanne);
+  font-size: 24px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink-black);
+  transition: transform var(--transition-fast) ease;
+}
+.capability-pill-tag:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-ink-black);
+}
+
+/* ============================================================
+   EYEBROW LABEL
+   ============================================================ */
+.eyebrow {
+  font-family: var(--font-lausanne);
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-8);
+  display: block;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  font-family: var(--font-lausanne);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--spacing-8) var(--spacing-16);
+  color: var(--color-ink-black);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-true-black);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-16);
+  right: var(--spacing-16);
+  height: 1px;
+  background-color: var(--color-ink-black);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   SECTIONS & SPACING (Alternating canvases)
+   ============================================================ */
+section {
+  padding: var(--spacing-64) var(--spacing-24);
+  background-color: var(--color-butter-cream); /* Default canvas */
+}
+
+/* Alternating panels between Butter Cream and Warm Bone */
+section:nth-child(even) {
+  background-color: var(--color-warm-bone);
+}
+
+section:nth-child(3n) {
+  background-color: var(--color-butter-cream);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+/* Section hair dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-ash-gray);
+  border: none;
+  margin: 0;
+}
+
+/* ============================================================
+   GLOW HAUS HERO (Minimal, oversized type, flat typography grids)
+   ============================================================ */
+.artify-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-butter-cream);
+  padding: var(--spacing-72) 0 var(--spacing-72);
+  border-bottom: 1px solid var(--color-ash-gray);
+}
+
+.artify-hero__bg {
+  display: none; /* No gradients or decorative backgrounds in Dovetail */
+}
+
+.artify-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pilltags);
+  background: var(--color-warm-bone);
+  border: 1px solid var(--color-ash-gray);
+  font-family: var(--font-lausanne);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink-black);
+  margin-bottom: var(--spacing-24);
+}
+.artify-hero__badge i {
+  color: var(--color-ink-black);
+}
+
+.artify-hero__title {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-ink-black);
+  margin: 0 0 var(--spacing-24) 0;
+}
+
+.artify-hero__subtitle {
+  font-family: var(--font-lausanne);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-black);
+  max-width: 500px;
+  margin: 0 0 var(--spacing-32) 0;
+}
+
+.artify-hero__btn--primary {
+  background-color: var(--color-ink-black) !important;
+  color: var(--color-warm-bone) !important;
+  border-radius: var(--radius-buttons) !important;
+  box-shadow: none !important;
+  padding: 14px 24px !important;
+}
+.artify-hero__btn--primary:hover {
+  background-color: var(--color-true-black) !important;
+  transform: translateY(-2px);
+}
+
+.artify-hero__btn--secondary {
+  color: var(--color-ink-black) !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+}
+.artify-hero__btn--secondary:hover {
+  text-decoration: underline !important;
+}
+
+.artify-hero__card {
+  border-radius: var(--radius-cards) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/* ============================================================
+   MODERN BADGE & MISC COMPONENTS
+   ============================================================ */
+.modern-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: var(--font-lausanne) !important;
+  font-size: 11px !important;
+  font-weight: var(--font-weight-semibold) !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 12px !important;
+  border-radius: var(--radius-badges) !important;
+  background-color: var(--color-warm-bone) !important;
+  color: var(--color-ink-black) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  text-transform: uppercase !important;
+}
+
+.modern-h2 {
+  font-family: var(--font-lausanne) !important;
+  font-size: var(--text-heading-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+  line-height: var(--leading-heading-lg) !important;
+  letter-spacing: var(--tracking-heading-lg) !important;
+  color: var(--color-ink-black) !important;
+}
+
+/* Overriding courses premium cards */
+.category-card-premium {
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: var(--radius-cards) !important;
+  box-shadow: none !important;
+}
+.category-card-premium:hover {
+  border-color: var(--color-ink-black) !important;
+}
+.category-card-image {
+  border-radius: var(--radius-cards) var(--radius-cards) 0 0 !important;
+  border-bottom: 1px solid var(--color-ash-gray) !important;
+}
+.category-explore-btn {
+  background-color: var(--color-ink-black) !important;
+  color: var(--color-warm-bone) !important;
+  border-radius: var(--radius-buttons) !important;
+}
+
+/* Overriding course blocks */
+.modern-course-card {
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: var(--radius-cards) !important;
+}
+.course-img-container {
+  border-radius: var(--radius-cards) var(--radius-cards) 0 0 !important;
+}
+
+/* Points Pathway items */
+.timeline-step {
+  border: 1px solid var(--color-ash-gray) !important;
+  background-color: var(--color-warm-bone) !important;
+  border-radius: var(--radius-cards) !important;
+}
+.timeline-step-highlight {
+  border-color: var(--color-ink-black) !important;
+  background-color: var(--color-warm-bone) !important;
+}
+.step-badge {
+  background-color: var(--color-ink-black) !important;
+  color: var(--color-warm-bone) !important;
+}
+
+/* Calculator override */
+.luxury-calculator-wrapper {
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: var(--radius-cards) !important;
+}
+.btn-premium-checkout {
+  background-color: var(--color-ink-black) !important;
+  color: var(--color-warm-bone) !important;
+}
+.btn-premium-checkout:hover {
+  background-color: var(--color-true-black) !important;
+}
+.points-breakdown-card {
+  background-color: var(--color-butter-cream) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: var(--radius-inputs) !important;
+}
+.premium-amount-input {
+  color: var(--color-ink-black) !important;
+  border-color: var(--color-ash-gray) !important;
+}
+.premium-amount-input:focus {
+  border-color: var(--color-ink-black) !important;
+}
+
+/* why choose cards */
+.why-card-premium {
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: var(--radius-cards) !important;
+}
+.why-icon-badge {
+  background-color: var(--color-butter-cream) !important;
+  color: var(--color-ink-black) !important;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.mt-1 { margin-top: var(--spacing-8); }
+.mt-2 { margin-top: var(--spacing-16); }
+.mt-3 { margin-top: var(--spacing-24); }
+.mt-4 { margin-top: var(--spacing-32); }
+.mt-5 { margin-top: var(--spacing-48); }
+.mt-6 { margin-top: var(--spacing-64); }
+
+.mb-1 { margin-bottom: var(--spacing-8); }
+.mb-2 { margin-bottom: var(--spacing-16); }
+.mb-3 { margin-bottom: var(--spacing-24); }
+.mb-4 { margin-bottom: var(--spacing-32); }
+.mb-5 { margin-bottom: var(--spacing-48); }
+.mb-6 { margin-bottom: var(--spacing-64); }
+
+.p-1 { padding: var(--spacing-8); }
+.p-2 { padding: var(--spacing-16); }
+.p-3 { padding: var(--spacing-24); }
+.p-4 { padding: var(--spacing-32); }
+.p-5 { padding: var(--spacing-48); }
+.p-6 { padding: var(--spacing-64); }
+
+/* ============================================================
+   HEADER REVAMP - DOVETAIL EDITORIAL AESTHETIC
+   ============================================================ */
+/* Root header container */
+.main-header {
+  background-color: var(--color-warm-bone) !important;
+  border-bottom: 1px solid var(--color-ash-gray) !important;
+  box-shadow: none !important;
+  padding: 12px 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* logo */
+.logo-img {
+  max-height: 48px !important;
+  border-radius: 8px !important;
+  transition: transform 0.2s ease !important;
+}
+.logo-img:hover {
+  transform: scale(1.03);
+}
+
+/* Center nav capsule container alignment */
+.center-nav {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Slide-Hover Pill Navigation */
+.nav-list {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: 9999px !important;
+  height: 52px !important;
+}
+.nav-list .nav-item {
+  position: relative !important;
+  z-index: 2 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nav-list .nav-link {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 6px !important;
+  color: #ffffff !important;
+  mix-blend-mode: difference !important;
+  padding: 10px 22px !important;
+  font-family: var(--font-lausanne) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  background: transparent !important;
+  transition: opacity 0.2s ease !important;
+}
+.nav-list .nav-link svg {
+  stroke: currentColor !important;
+  transition: transform 0.2s ease !important;
+}
+.nav-list .nav-link:hover svg {
+  transform: translateY(1px);
+}
+.nav-list .nav-cursor {
+  position: absolute !important;
+  top: 4px !important;
+  bottom: 4px !important;
+  height: calc(100% - 8px) !important;
+  background-color: var(--color-ink-black) !important;
+  border-radius: 9999px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease !important;
+}
+
+/* Right-actions container spacing */
+.right-actions {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+}
+
+/* Action Dropdown Buttons, Selectors, and Cart */
+.selector-btn, .account-btn, .cart-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  column-gap: 8px !important;
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: 9999px !important;
+  padding: 8px 18px !important;
+  font-family: var(--font-lausanne) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--color-ink-black) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+  height: 44px !important;
+}
+.selector-btn:hover, .account-btn:hover, .cart-btn:hover {
+  background-color: var(--color-butter-cream) !important;
+  border-color: var(--color-ink-black) !important;
+  color: var(--color-ink-black) !important;
+}
+.selector-btn .selector-ico {
+  margin-right: 2px !important;
+  border-radius: 2px !important;
+}
+
+/* Cart Button indicator badge styling */
+.cart-btn {
+  position: relative !important;
+  padding: 8px 14px !important;
+  width: auto !important;
+  color: var(--color-ink-black) !important;
+}
+.cart-btn i {
+  font-size: 16px !important;
+}
+.cart-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--color-ink-black) !important;
+  color: var(--color-warm-bone) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  padding: 2px 6px !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  margin-left: 4px !important;
+}
+
+/* Dropdown Menu overrides */
+.nav-list .dropdown-menu, .dropdown-menu {
+  background-color: var(--color-warm-bone) !important;
+  border: 1px solid var(--color-ash-gray) !important;
+  border-radius: 16px !important;
+  padding: 8px !important;
+  box-shadow: none !important;
+  margin-top: 8px !important;
+  mix-blend-mode: normal !important;
+  z-index: 999 !important;
+}
+.dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 10px !important;
+  font-family: var(--font-lausanne) !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: var(--color-ink-black) !important;
+  padding: 10px 18px !important;
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+.dropdown-item:hover, .dropdown-item.active {
+  background-color: var(--color-butter-cream) !important;
+  color: var(--color-ink-black) !important;
+}
+.dropdown-divider {
+  border-top: 1px solid var(--color-ash-gray) !important;
+  margin: 6px 0 !important;
+}
+
+/* Account specific Dropdown headers */
+.account-dropdown .account-head {
+  padding: 10px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  row-gap: 4px !important;
+}
+.account-dropdown .account-head__name {
+  font-family: var(--font-lausanne) !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: var(--color-ink-black) !important;
+}
+.account-dropdown .account-head__credits {
+  font-family: var(--font-lausanne) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: var(--color-ink-black) !important;
+}
+.account-cta {
+  padding: 4px 8px !important;
+}
+
+/* Sticky Header styling */
+.sticky-header {
+  background-color: var(--color-warm-bone) !important;
+  border-bottom: 1px solid var(--color-ash-gray) !important;
+  box-shadow: none !important;
+  padding: 10px 0 !important;
+  transition: all 0.3s ease !important;
+}
+.sticky-header .logo img {
+  max-height: 40px !important;
+  border-radius: 6px !important;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggler {
+  color: var(--color-ink-black) !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease !important;
+}
+.mobile-nav-toggler:hover {
+  transform: scale(1.05);
+}
